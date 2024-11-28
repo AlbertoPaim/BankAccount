@@ -1,7 +1,5 @@
 package org.example;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +32,19 @@ public abstract class BankAccount {
         }
     }
 
+    public String getCostumerName() {
+        return costumerName;
+    }
 
+    public String getBillingAddress() {
+        return billingAddress;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public List<String> getTransactions() {
+        return transactions;
+    }
 }
