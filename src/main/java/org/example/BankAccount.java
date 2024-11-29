@@ -26,10 +26,20 @@ public abstract class BankAccount {
     }
 
     public void saque(int amount) {
-        if (balance > amount) {
+        if (balance > amount && amount > 0) {
             this.balance -= amount;
             this.transactions.add("Novo saque de R$: " + amount);
         }
+    }
+
+    public abstract String bankAccountDetails();
+
+    public void extrato() {
+        System.out.println("Extrato bancário de " + costumerName);
+        for (String transaction : transactions) {
+            System.out.println(transaction);
+        }
+        System.out.println("Saldo:" + balance);
     }
 
     public String getCostumerName() {
@@ -47,4 +57,6 @@ public abstract class BankAccount {
     public List<String> getTransactions() {
         return transactions;
     }
+
+
 }

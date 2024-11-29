@@ -1,6 +1,6 @@
 package org.example;
 
-public class PersonalAccount extends BankAccount{
+public class PersonalAccount extends BankAccount {
     private String cpf;
 
     public PersonalAccount(String costumerName, String billingAddress, int inicialBalance, String cpf) {
@@ -8,6 +8,8 @@ public class PersonalAccount extends BankAccount{
         this.cpf = cpf;
     }
 
-
-
+    @Override
+    public String bankAccountDetails() {
+        return "Conta pessoa física:" + this.cpf;
+    }
 }
