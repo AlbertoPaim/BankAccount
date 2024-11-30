@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.PrintStream;
@@ -41,17 +42,25 @@ public class BankAccountTest extends TestCase {
         Assert.assertEquals(150000, businessAccount.getBalance(), 00.1);
     }
 
+    @Test
     public void testeSaquePersonalAccount() {
         personalAccount.saque(500);
 
         Assert.assertEquals(500, personalAccount.getBalance(), 00.1);
     }
 
-
+    @Test
     public void testeSaqueBusinessAccount() {
         businessAccount.saque(50000);
 
         Assert.assertEquals(50000, businessAccount.getBalance(), 00.1);
     }
+
+    @Test
+    public void testeExtrato() {
+        personalAccount.extrato();
+        Mockito.verify(printStream).println("Extrato bancário de ss");
+    }
+
 
 }
